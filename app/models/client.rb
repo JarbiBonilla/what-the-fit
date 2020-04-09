@@ -1,3 +1,3 @@
-class Client
+class Client < ActiveRecord::Base
 
 end

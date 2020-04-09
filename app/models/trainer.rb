@@ -1,3 +1,3 @@
-class Trainer
+class Trainer < ActiveRecord::Base
 
 end

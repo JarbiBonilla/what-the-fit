@@ -1,3 +1,3 @@
-class Appointment
+class Appointment < ActiveRecord::Base
 
 end
