@@ -14,5 +14,7 @@ Appointments
 Clients:
 - name
 - age
+- phone number
+- email
 - male or female
 - fat loss or weight gain
