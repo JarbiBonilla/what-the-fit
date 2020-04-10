@@ -14,8 +14,10 @@ Appointments
 Clients:
 - name
 - age
+- height
+- initial_weight
 - phone number
 - email
-- male or female
-- fat loss
-- weight gain 
+- gender
+- current_weight
+- goal 
