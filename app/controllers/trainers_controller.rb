@@ -10,12 +10,13 @@ class TrainersController < ApplicationController
     end
 
     def create
-        if (trainer = Trainer.create(trainer_params))
-            session[:trainer_id] = trainer.id
-            redirect_to trainer_path(trainer)
+        @trainer = Trainer.new(trainer_params)
+        if @trainer.save
+            session[:trainer_id] = @trainer.id
+            redirect_to @trainer
         else
-            render 'new'
-        end
+            render :new
+        end 
     end
 
     def show
