@@ -28,4 +28,18 @@ class ClientsController < ApplicationController
 
     end
 
+    private 
+
+    def client_params
+        params.require(:clients).permit(:name, 
+        :age,
+        :height,
+        :initial_weight,
+        :phone_number,
+        :email,
+        :gender,
+        :current_weight,
+        :goal_weight)
+    end
+
 end 
