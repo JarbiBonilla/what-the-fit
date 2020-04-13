@@ -1,1 +1,5 @@
 # list all of the trainers that have been created.
+
+<% @trainers.all.each do |t| %>
+    <%= t.name %>
+    <% end %>
