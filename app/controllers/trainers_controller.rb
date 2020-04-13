@@ -1,6 +1,10 @@
 class TrainersController < ApplicationController
     skip_before_action :verified_user, only: [:new, :create]
 
+    def index
+        @trainers = Trainer.all 
+    end
+
     def new
         @trainer = Trainer.new
     end
