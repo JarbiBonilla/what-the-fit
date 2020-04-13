@@ -1,6 +1,6 @@
 class TrainersController < ApplicationController
     skip_before_action :verified_user, only: [:new, :create]
-
+    before_action :set_trainer, only: [:show, :edit, :update]
     def index
         @trainers = Trainer.all 
     end
@@ -20,15 +20,14 @@ class TrainersController < ApplicationController
     end
 
     def show
-        @trainer = Trainer.find_by(id: params[:id])
+        
     end
 
     def edit
-        @trainer = Trainer.find(params[:id])
+        
     end
 
     def update
-        @trainer = Trainer.find(params[:id])
         @trainer.update(trainer_params)
       
         if @trainer.save
@@ -42,5 +41,9 @@ class TrainersController < ApplicationController
 
     def trainer_params
         params.require(:trainer).permit(:name, :email, :password, :bio)
+    end
+
+    def set_trainer
+        @trainer = Trainer.find_by(id: params[:id])
     end
 end
