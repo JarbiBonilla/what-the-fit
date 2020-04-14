@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'sessions#home'
   #where a trainer signs up
   get '/signup', to: 'trainers#new'
   post '/signup', to: 'trainers#create'
