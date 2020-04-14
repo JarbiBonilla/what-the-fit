@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-      session.delete("trainer_id")
-      redirect_to root_path
+      session.clear
+      redirect_to '/'
     end
 end

@@ -13,11 +13,11 @@ Rails.application.routes.draw do
 
 
   resources :trainers do
-    resources :clients, only: [:new, :index]
+    resources :clients, only: [:new, :create, :index, :show]
   end
 
   resources :clients do 
-    resources :appointments, only: [:new, :index]
+    resources :appointments, only: [:new, :create, :index, :show]
   end
 
 
