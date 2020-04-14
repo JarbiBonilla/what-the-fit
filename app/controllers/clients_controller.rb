@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
 
-    before_action :set_client, only: [:show, :edit, :update]
+    before_action :set_client, only: [:show, :edit, :update, :destroy]
 
     def index
         @clients = Client.all
@@ -36,7 +36,12 @@ class ClientsController < ApplicationController
     end
 
     def destroy
-        Client.destroy
+        if current_user.id == client.trainer_id
+            Client.destroy
+        else
+            flash[:error] = "This is not your client! You can only manage your clients!"
+            redirect_to trainer_clients_path(@trainer)
+        end
     end
 
     private 
