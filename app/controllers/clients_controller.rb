@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-
+    before_action :verified_action
     before_action :set_client, only: [:show, :edit, :update, :destroy]
 
     def index
