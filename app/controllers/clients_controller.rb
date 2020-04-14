@@ -9,11 +9,16 @@ class ClientsController < ApplicationController
     end
 
     def create
-
+        @client = current_user.client.build(client_params)
+        if @client.save
+            redirect_to clients_path
+        else
+            render :new
+        end 
     end
 
     def show
-
+        
     end
 
     def edit
