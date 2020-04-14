@@ -1,5 +1,7 @@
 class ClientsController < ApplicationController
 
+    before_action :set_client, only: [:show, :edit, :update]
+
     def index
         @clients = Client.all
     end
@@ -18,19 +20,23 @@ class ClientsController < ApplicationController
     end
 
     def show
-        
+       # @client = Client.find_by(id: params[:id])
     end
 
     def edit
-
+       # @client = Client.find_by(id: params[:id])
     end
 
     def update
-
+        if @client.update(client_params)
+            redirect_to client_path(@client)
+        else 
+            render :edit 
+        end
     end
 
     def destroy
-
+        Client.destroy
     end
 
     private 
@@ -45,6 +51,10 @@ class ClientsController < ApplicationController
         :gender,
         :current_weight,
         :goal_weight)
+    end
+
+    def set_client
+        @client = Client.find_by(id: params[:id])
     end
 
 end 
