@@ -3,11 +3,9 @@ Rails.application.routes.draw do
   #where a trainer signs up
   get '/signup', to: 'trainers#new'
   post '/signup', to: 'trainers#create'
-
   #where a trainer logs in
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-
   #logout route
   delete '/logout', to: 'sessions#destroy'
 
@@ -21,6 +19,5 @@ Rails.application.routes.draw do
   resources :clients do 
     resources :appointments, only: [:new, :create, :index]
   end
-
 
 end
