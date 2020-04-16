@@ -7,11 +7,15 @@ class AppointmentsController < ApplicationController
     end
 
     def new
-        @appointment = Appointment.new
+        if params[:client_id] && @client = Client.find_by(id: params[:client_id])
+            @appointment = @client.appointments.build
+        else
+            #flash[:error] = "Client does not exist! Cannot create appointment."
+            redirect_to new_client_path
     end
 
     def create
-        @appointment = appointment.client.build(appointment_params)
+        @appointment = current_user.appointments.build(appointment_params)
         if @appointment.save
             redirect_to appointment_path
         else
