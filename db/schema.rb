@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_031401) do
+ActiveRecord::Schema.define(version: 2020_04_16_042315) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "appointment_time"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2020_04_10_031401) do
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.float "height"
     t.integer "initial_weight"
     t.integer "phone_number"
     t.string "email"
@@ -34,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_031401) do
     t.integer "goal_weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "height"
   end
 
   create_table "trainers", force: :cascade do |t|
