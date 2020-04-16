@@ -12,12 +12,13 @@ class AppointmentsController < ApplicationController
         else
             #flash[:error] = "Client does not exist! Cannot create appointment."
             redirect_to new_client_path
+        end 
     end
 
     def create
         @appointment = current_user.appointments.build(appointment_params)
         if @appointment.save
-            redirect_to appointment_path
+            redirect_to appointment_path(@appointment)
         else
             render :new
         end 
