@@ -57,7 +57,8 @@ class AppointmentsController < ApplicationController
         params.require(:appointments).permit(
             :appointment_time,
             :paid_for,
-            :price
+            :price,
+            :client_id
         )
     end
 

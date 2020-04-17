@@ -1,3 +1,6 @@
 # create a form for a new appointment and to edit an appointment.
 
-<h1> Add a new appointment for <%= @client.name %>! </h1>
+
+<%= form_for(@appointment) do |f| %>
+    <%= f.label :appointment_time %>
+    <%= f.datetime :appointment_time
