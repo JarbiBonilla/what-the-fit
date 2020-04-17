@@ -1,11 +1,12 @@
 # create a form for a new appointment and to edit an appointment.
 
 
-<%= form_for(@appointment) do |f| %>
+<%= form_for :appointment do |f| %>
+
     <%= f.hidden_field :client_id %>
 
     <%= f.label :appointment_time %>
-    <%= f.datetime :appointment_time %>
+    <%= f.datetime_field :appointment_time %>
     <br>
     <br>
     <%= f.label :price %>
