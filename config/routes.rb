@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :clients, except: [:index]
-  resources :appointments, except: [:new, :create, :index]
+  resources :appointments, except: [:new, :index]
 
   resources :trainers do
     resources :clients, only: [:index]
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   
   resources :clients do 
-    resources :appointments, only: [:new, :create, :index]
+    resources :appointments, only: [:new, :index]
   end
 
 end
