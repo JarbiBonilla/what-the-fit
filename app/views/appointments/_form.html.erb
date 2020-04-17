@@ -2,5 +2,21 @@
 
 
 <%= form_for(@appointment) do |f| %>
+    <%= f.hidden_field :client_id %>
+
     <%= f.label :appointment_time %>
-    <%= f.datetime :appointment_time
+    <%= f.datetime :appointment_time %>
+    <br>
+    <br>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    <br>
+    <br>
+    <%= f.label :paid_for %>
+    <%= f.check_box :paid_for %>
+    <br>
+    <br>
+
+    <%= f.submit %>
+
+    <% end %>
