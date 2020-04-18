@@ -8,3 +8,10 @@
     <%= @trainer.email %>
     <br>
     <%= @trainer.bio %>
+
+
+    <br>
+    <br>
+
+    <%= link_to "See all your clients!", trainer_clients_path(@trainer) %>
+    <%= link_to "Add a new client here!", new_client_path %>
