@@ -1,3 +1,11 @@
 # show a trainer's specific page with its specific clients and appointments.
 
 <h2> Welcome, <%= @trainer.name %> </h2>
+
+<p> Your info: </p>
+
+<% @trainer.each do |t| %>
+    <%= t.name %>
+    <%= t.email %>
+    <%= t.bio %>
+    <% end %>
