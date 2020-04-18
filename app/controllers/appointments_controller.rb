@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
         if params[:client_id] && @client = Client.find_by(id: params[:client_id])
             @appointment = @client.appointments.build
         else
-            #flash[:error] = "Client does not exist! Cannot create appointment."
+            flash[:message] = "Client does not exist! Cannot create appointment."
             redirect_to new_client_path
         end 
     end
@@ -48,7 +48,7 @@ class AppointmentsController < ApplicationController
             flash[:message] = "Your appointment has been successfully deleted!"
             redirect_to trainer_clients_path(@trainer)
         else
-            flash[:error] = "Unable to delete your appointment! Please try again!"
+            flash[:message] = "Unable to delete your appointment! Please try again!"
             redirect_to appointment_path(@appointment)
         end
     end
