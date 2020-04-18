@@ -37,7 +37,7 @@ class ClientsController < ApplicationController
 
     def destroy
         if current_user.id == client.trainer_id
-            Client.destroy
+            @client.destroy
         else
             flash[:error] = "This is not your client! You can only manage your clients!"
             redirect_to trainer_clients_path(@trainer)

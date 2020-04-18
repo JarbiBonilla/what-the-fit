@@ -20,7 +20,6 @@ class AppointmentsController < ApplicationController
         if @appointment.save
             redirect_to appointment_path(@appointment)
         else
-            binding.pry
             @client = @appointment.client
             render :new
         end 
@@ -44,7 +43,7 @@ class AppointmentsController < ApplicationController
 
     def destroy
         if current_user.id == appointment.trainer_id
-            Appointment.destroy
+            @appointment.destroy
             flash[:message] = "Your appointment has been successfully deleted!"
             redirect_to trainer_clients_path(@trainer)
         else

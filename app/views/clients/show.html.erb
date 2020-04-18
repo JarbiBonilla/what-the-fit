@@ -10,3 +10,7 @@
 <%= @client.gender %>
 <%= @client.current_weight %>
 <%= @client.goal_weight %>
+
+
+<%= link_to "Add an appointment here!", new_client_appointment_path(@client) %>
+<%= link_to "Delete client here!", method: "delete"
