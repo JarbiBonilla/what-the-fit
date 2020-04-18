@@ -3,11 +3,11 @@
 <h2> Welcome, <%= @trainer.name %> </h2>
 
 <p> Your info: </p>
-    <%= @trainer.name %>
+  <p> Name: <%= @trainer.name %> </p>
     <br>
-    <%= @trainer.email %>
+  <p> Email: <%= @trainer.email %> </p>
     <br>
-    <%= @trainer.bio %>
+  <p> Bio: <%= @trainer.bio %> </p>
 
 
     <br>
@@ -15,3 +15,4 @@
 
     <%= link_to "See all your clients!", trainer_clients_path(@trainer) %>
     <%= link_to "Add a new client here!", new_client_path %>
+    <%= link_to "Edit your profile here!", edit_trainer_path %>

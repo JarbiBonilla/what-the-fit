@@ -1,5 +1,7 @@
 # will show all clients from all trainers. 
 
-<% @clients.each do |c| %>
+<h1> <%= current_user.name %>'s Clients </h1>
+
+<% @clients.all.each do |c| %>
 <%= c.name %>
 <% end %>
