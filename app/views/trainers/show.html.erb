@@ -3,9 +3,8 @@
 <h2> Welcome, <%= @trainer.name %> </h2>
 
 <p> Your info: </p>
-
-<% @trainer.each do |t| %>
-    <%= t.name %>
-    <%= t.email %>
-    <%= t.bio %>
-    <% end %>
+    <%= @trainer.name %>
+    <br>
+    <%= @trainer.email %>
+    <br>
+    <%= @trainer.bio %>
