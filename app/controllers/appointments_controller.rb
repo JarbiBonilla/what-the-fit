@@ -18,6 +18,7 @@ class AppointmentsController < ApplicationController
     def create
         @appointment = current_user.appointments.build(appointment_params)
         if @appointment.save
+            flash[:message] = "Appointment has been successfully created!"
             redirect_to appointment_path(@appointment)
         else
             @client = @appointment.client
