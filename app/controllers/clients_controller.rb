@@ -21,6 +21,7 @@ class ClientsController < ApplicationController
 
     def show
        # @client = Client.find_by(id: params[:id])
+       #binding.pry
     end
 
     def edit

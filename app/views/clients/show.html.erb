@@ -10,7 +10,15 @@
 <%= @client.gender %>
 <%= @client.current_weight %>
 <%= @client.goal_weight %>
+<br>
+<br>
+
+<% @client.appointments.each do |app| %>
+   <%= link_to app.appointment_time, appointment_path(app) %>
+   <% end %>
 
 
 <%= link_to "Add an appointment here!", new_client_appointment_path(@client) %>
+
+
 <%= link_to "Delete client here!", method: "delete"
