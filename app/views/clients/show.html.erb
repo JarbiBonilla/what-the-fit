@@ -21,4 +21,4 @@
 <%= link_to "Add an appointment here!", new_client_appointment_path(@client) %>
 
 
-<%= link_to "Delete client here!", method: "delete"
+<%= button_to "Delete Client", client_path(@client), method: :delete %>
