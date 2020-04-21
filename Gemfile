@@ -26,6 +26,8 @@ gem 'dotenv-rails'
 
 gem 'pry'
 
+gem 'bootstrap-sass'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
