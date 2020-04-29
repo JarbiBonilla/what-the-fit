@@ -1,5 +1,7 @@
 # will render from _form.html.erb. ability to create a new client.
 
+<%= render partial: "layouts/errors", locals: {item: @client} %>
+
 <h1> Add a New Client here! </h1>
 
 <%= render 'form' %>
