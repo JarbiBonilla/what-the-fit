@@ -16,9 +16,9 @@
 <% @client.appointments.each do |app| %>
    <%= link_to app.appointment_time, appointment_path(app) %>
    <% end %>
+<br>
 
-
-<%= link_to "Add an appointment here!", new_client_appointment_path(@client) %>
-
+<%= button_to "Add an Appointment", new_client_appointment_path(@client), method: :get %>
+<br>
 
 <%= button_to "Delete Client", client_path(@client), method: :delete %>
