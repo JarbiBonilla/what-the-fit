@@ -14,7 +14,7 @@
 <br>
 
 <% @client.appointments.each do |app| %>
-   <%= link_to app.appointment_time, appointment_path(app) %>
+   <%= link_to app.appointment_time.strftime("%A %B %e %Y %l %M %p"), appointment_path(app) %>
    <% end %>
 <br>
 
