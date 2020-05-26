@@ -24,7 +24,9 @@
 <%= button_to "Add an Appointment", new_client_appointment_path(@client), method: :get %>
 <br>
 
+<% if current_user.id == @client.appointments.trainer_id %>
 <%= button_to "Edit Client", edit_client_path(@client), method: :get %>
 <br>
 
 <%= button_to "Delete Client", client_path(@client), method: :delete %>
+<% end %>
