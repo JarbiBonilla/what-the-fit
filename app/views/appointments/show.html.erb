@@ -4,3 +4,9 @@
 <%= @appointment.appointment_time.strftime("%A %B %e, %Y %l:%M %p") %>
 <%= @appointment.paid_for %>
 $<%= @appointment.price %>
+
+
+<%= button_to "Edit Appointment", edit_appointment_path(@appointment), method: :get %>
+<br>
+
+<%= button_to "Delete Appointment", appointment_path(@appointment), method: :delete %>

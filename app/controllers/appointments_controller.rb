@@ -43,14 +43,13 @@ class AppointmentsController < ApplicationController
     end
 
     def destroy
-        if current_user.id == appointment.trainer_id
             @appointment.destroy
             flash[:message] = "Your appointment has been successfully deleted!"
-            redirect_to trainer_clients_path(@trainer)
-        else
-            flash[:message] = "Unable to delete your appointment! Please try again!"
-            redirect_to appointment_path(@appointment)
-        end
+            redirect_to trainer_path(current_user)
+      #  else
+       #     flash[:message] = "Unable to delete your appointment! Please try again!"
+        #    redirect_to appointment_path(@appointment)
+        #end
     end
 
     private
