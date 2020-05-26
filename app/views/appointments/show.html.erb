@@ -1,9 +1,10 @@
 # will show all the appointments that a specific trainer has created for his clients.
 
-
-<%= @appointment.appointment_time.strftime("%A %B %e, %Y %l:%M %p") %>
-<%= @appointment.paid_for %>
-$<%= @appointment.price %>
+<ul>
+<li> <%= @appointment.appointment_time.strftime("%A %B %e, %Y %l:%M %p") %> </li>
+<li> <%= @appointment.paid_for %> </li>
+<li> $<%= @appointment.price %> </li>
+</ul>
 
 
 <%= button_to "Edit Appointment", edit_appointment_path(@appointment), method: :get %>
