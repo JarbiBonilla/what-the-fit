@@ -14,7 +14,7 @@
 <br>
 <br>
 
-<h4> <%= @client.name %>'s appointments </h4>
+<h4> <%= @client.name %>'s appointments' </h4>
 
 <% @client.appointments.each do |app| %>
    <%= link_to app.appointment_time.strftime("%A %B %e, %Y %l:%M %p"), appointment_path(app) %>
