@@ -30,6 +30,7 @@ class ClientsController < ApplicationController
 
     def update
         if @client.update(client_params)
+            flash[:message] = "Your client's information has been updated successfully!"
             redirect_to client_path(@client)
         else 
             render :edit 
