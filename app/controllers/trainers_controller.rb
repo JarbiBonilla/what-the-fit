@@ -21,7 +21,12 @@ class TrainersController < ApplicationController
     end
 
     def show
-        
+        #byebug
+        if current_user.id == @trainer.id 
+            render :show
+        else
+            redirect_to trainer_path(current_user)
+        end
     end
 
     def edit
