@@ -14,7 +14,7 @@ class Client < ApplicationRecord
     validates :gender, presence: true
     validates :current_weight, presence: true
     validates :goal_weight, presence: true 
-    validates :height, presence :true 
+    validates :height, presence: true 
 
     private
 
