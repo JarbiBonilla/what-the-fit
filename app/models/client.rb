@@ -7,6 +7,14 @@ class Client < ApplicationRecord
 
     validates :name, presence: true
     validates :age, numericality: true
+    validates :initial_weight, presence: true
+    validates :phone_number, presence: true
+    validates :phone_number, length: { is: 10 }
+    validates :email, presence: true, uniqueness: true 
+    validates :gender, presence: true
+    validates :current_weight, presence: true
+    validates :goal_weight, presence: true 
+    validates :height, presence :true 
 
     private
 
