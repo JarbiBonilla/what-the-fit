@@ -3,7 +3,12 @@ class ClientsController < ApplicationController
     before_action :set_client, only: [:show, :edit, :update, :destroy]
 
     def index
-        @clients = Client.all 
+        if current_user.id == params[:trainer_id].to_i
+            @clients = Client.all 
+            render :index 
+        else
+            redirect_to trainer_clients_path(current_user)
+        end 
     end
 
     def new

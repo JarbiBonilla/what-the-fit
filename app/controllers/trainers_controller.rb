@@ -21,7 +21,6 @@ class TrainersController < ApplicationController
     end
 
     def show
-        #byebug
         if current_user.id == @trainer.id 
             render :show
         else
