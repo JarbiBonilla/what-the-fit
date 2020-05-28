@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :appointments, except: [:new, :index]
 
   resources :trainers do
-    resources :clients, only: [:index]
+    resources :clients, only: [:index, :new, :create]
   end
 
   

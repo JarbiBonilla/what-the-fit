@@ -14,9 +14,11 @@ class ClientsController < ApplicationController
 
     def new
         @client = Client.new
+        @client.appointments.build
     end
 
     def create
+        #byebug
         @client = current_user.clients.build(client_params)
         if @client.save
             redirect_to client_path(@client)
@@ -60,7 +62,10 @@ class ClientsController < ApplicationController
         :email,
         :gender,
         :current_weight,
-        :goal_weight)
+        :goal_weight, appointments_attributes: [:appointment_time,
+        :paid_for,
+        :price,
+        :client_id, :trainer_id])
     end
 
     def set_client

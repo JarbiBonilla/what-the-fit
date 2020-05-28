@@ -1,7 +1,7 @@
 # form for new and editing clients. trainers will has this ability.
 
 
-<%= form_for(@client) do |f| %>
+<%= form_with model: @client, local: true do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br> 
@@ -38,6 +38,20 @@
     <%= f.number_field :goal_weight %> ("lbs")
     <br>
     <br>
+        <%= f.fields_for :appointments do |a| %>
+            <%= a.label :appointment_time %>
+            <%= a.datetime_field :appointment_time %>
+            <br>
+            <br>
+            <%= a.label :price %>
+            <%= a.number_field :price %>
+            <br>
+            <br>
+            <%= a.label :paid_for %>
+            <%= a.check_box :paid_for %>
+            
+            <%= f.hidden_field :trainer_id %>
+            <% end %>
     <%= f.submit %>
 
     <% end %>
