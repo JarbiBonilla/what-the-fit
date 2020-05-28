@@ -29,7 +29,11 @@ class TrainersController < ApplicationController
     end
 
     def edit
-        
+        if current_user.id == @trainer.id 
+            render :edit
+        else
+            redirect_to trainer_path(current_user)
+        end
     end
 
     def update

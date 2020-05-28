@@ -18,8 +18,12 @@ class ClientsController < ApplicationController
     end
 
     def create
-        #byebug
         @client = current_user.clients.build(client_params)
+       # if @client.save
+       #byebug
+            @appointment = @client.appointments.build
+            current_user.clients << @client 
+            @appointment.save
         if @client.save
             redirect_to client_path(@client)
         else
