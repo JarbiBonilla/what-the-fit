@@ -2,6 +2,7 @@
 
 
 <%= form_with model: @client, local: true do |f| %>
+
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br> 
@@ -39,6 +40,9 @@
     <br>
     <br>
         <%= f.fields_for :appointments do |a| %>
+
+            <%= a.hidden_field :trainer_id, value: current_user.id %> 
+
             <%= a.label :appointment_time %>
             <%= a.datetime_field :appointment_time %>
             <br>
@@ -51,7 +55,6 @@
             <%= a.check_box :paid_for %>
             <br>
             <br>
-            <%= a.hidden_field :trainer_id %>
         <% end %>
     <%= f.submit %>
 
