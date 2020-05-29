@@ -2,6 +2,8 @@
 
 <h1> <%= current_user.name %>'s Clients </h1>
 
+<ul>
 <% @clients.all.each do |c| %>
-<%= link_to c.name, client_path(c) %>
+    <li> <%= link_to c.name, client_path(c) %> </li>
 <% end %>
+</ul>

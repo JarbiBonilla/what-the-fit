@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
     def index
         #byebug
         if current_user.id == params[:trainer_id].to_i
-            @clients = current_user.clients
+            @clients = current_user.clients.ordered_by_name
             render :index 
         else
             redirect_to trainer_clients_path(current_user)

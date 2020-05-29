@@ -4,6 +4,7 @@ class Client < ApplicationRecord
     has_many :trainers, through: :appointments
     accepts_nested_attributes_for :appointments 
 
+    scope :ordered_by_name, -> { order(name: :asc) }
 
     validates :name, presence: true
     validates :age, numericality: true
