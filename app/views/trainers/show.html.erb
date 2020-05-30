@@ -5,7 +5,11 @@
 <p> Your info: </p>
   <p> Name: <%= @trainer.name %> </p>
     <br>
+    <% if @trainer.provider == "" %>
   <p> Email: <%= @trainer.email %> </p>
+    <% else %>
+  <p> Signed in from Facebook </p>
+    <% end %>  
     <br>
   <p> Bio: <%= @trainer.bio %> </p>
 

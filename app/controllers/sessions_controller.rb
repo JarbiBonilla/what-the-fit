@@ -9,12 +9,12 @@ class SessionsController < ApplicationController
     end
 
     def create
-      trainer = Trainer.find_by(email: params[:trainer][:email])
       if request.env['omniauth.auth']
         trainer = Trainer.create_with_omniauth(request.env['omniauth.auth'])
         session[:trainer_id] = trainer.id    
         redirect_to trainer_path(trainer.id)
       elsif 
+        trainer = Trainer.find_by(email: params[:trainer][:email])
         trainer && trainer.authenticate(params[:trainer][:password])
         session[:trainer_id] = trainer.id
         redirect_to trainer_path(trainer)

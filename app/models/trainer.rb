@@ -9,10 +9,10 @@ class Trainer < ApplicationRecord
 
     def self.create_with_omniauth(auth)
         trainer = find_or_create_by(uid: auth['uid'], provider:  auth['provider'])
-        trainer.email = "#{auth[‘uid’]}@#{auth['provider']}.com"
+        trainer.email = "#{auth['uid']}@#{auth['provider']}.com"
         trainer.password = auth['uid']
         trainer.name = auth['info']['name']
-        if Trainer.exists?(trainer)
+        if Trainer.exists?(trainer.id)
           trainer
         else
           trainer.save!
