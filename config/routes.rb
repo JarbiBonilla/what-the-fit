@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'auth/facebook/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+
   root 'sessions#home'
   #where a trainer signs up
   get '/signup', to: 'trainers#new'
