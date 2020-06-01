@@ -37,6 +37,7 @@ class ClientsController < ApplicationController
     end
 
     def update
+       # byebug
         if @client.update(client_params)
             flash[:message] = "Your client's information has been updated successfully!"
             redirect_to client_path(@client)
@@ -65,7 +66,7 @@ class ClientsController < ApplicationController
         :goal_weight, appointments_attributes: [:appointment_time,
         :paid_for,
         :price,
-        :client_id, :trainer_id])
+        :client_id, :trainer_id, :id])
     end
 
     def set_client

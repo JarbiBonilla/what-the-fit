@@ -5,11 +5,7 @@
 <p> Your info: </p>
   <p> Name: <%= @trainer.name %> </p>
     <br>
-    <% if @trainer.provider == "" %>
-  <p> Email: <%= @trainer.email %> </p>
-    <% else %>
-  <p> Signed in from Facebook </p>
-    <% end %>  
+  <p> Email: <%= @trainer.email %> </p>  
     <br>
   <p> Bio: <%= @trainer.bio %> </p>
 
@@ -19,5 +15,6 @@
 
     <%= link_to "See all your clients!", trainer_clients_path(@trainer) %> <br>
     <%= link_to "Add a new client here!", new_trainer_client_path(@trainer) %> <br>
+    <% if @trainer.provider == nil %>
     <%= link_to "Edit your profile here!", edit_trainer_path(@trainer) %> <br>
-    
+    <% end %>

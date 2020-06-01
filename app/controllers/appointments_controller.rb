@@ -55,7 +55,7 @@ class AppointmentsController < ApplicationController
             :appointment_time,
             :paid_for,
             :price,
-            :client_id
+            :client_id, :id
         )
     end
 
