@@ -7,7 +7,7 @@ class AppointmentsController < ApplicationController
     end
 
     def new
-        if params[:client_id] && @client == Client.find_by(id: params[:client_id])
+        if params[:client_id] && @client = Client.find_by(id: params[:client_id])
             @appointment = @client.appointments.build
         else
             flash[:message] = "Client does not exist! Cannot create appointment."
