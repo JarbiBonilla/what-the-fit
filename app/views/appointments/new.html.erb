@@ -1,5 +1,5 @@
 # will render from _form.html.erb to create a new appointment for a client.
-
+<%= render partial: "layouts/errors", locals: {item: @appointment} %>
 
 <h1> Add a new appointment <%= @client.name %>! </h1>
 
