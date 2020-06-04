@@ -1,0 +1,22 @@
+<div class="w3-container">
+  <table class="w3-table w3-striped">
+  <tr>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Points</th>
+</tr>
+    <tr>
+      <td> <%= @appointment.appointment_time.strftime("%A %B %e, %Y %l:%M %p") %> </td>
+      <td> <%= @appointment.paid_for %> </td>
+      <td> $<%= @appointment.price %> </td>
+    </tr>
+    </table>
+    </div>
+
+    <ul>
+      <li> <%= @appointment.appointment_time.strftime("%A %B %e, %Y %l:%M %p") %> </li>
+      <li> <%= @appointment.paid_for %> </li>
+      <li> $<%= @appointment.price %> </li>
+      </ul>
+
+
