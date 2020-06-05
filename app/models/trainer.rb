@@ -5,7 +5,7 @@ class Trainer < ApplicationRecord
 
     validates :name, presence: true
     validates :email, presence: true, uniqueness: true 
-    validates :password, length: { minimum: 8 }
+    validates :password, length: { minimum: 8 }, presence: true 
 
     def self.create_with_omniauth(auth)
         trainer = find_or_create_by(uid: auth['uid'], provider:  auth['provider'])

@@ -15,14 +15,14 @@ class SessionsController < ApplicationController
         redirect_to trainer_path(trainer.id)
       elsif 
         trainer = Trainer.find_by(email: params[:trainer][:email])
-        trainer && trainer.authenticate(params[:trainer][:password])
-        session[:trainer_id] = trainer.id
-        redirect_to trainer_path(trainer)
+        if trainer && trainer.authenticate(params[:trainer][:password])
+          session[:trainer_id] = trainer.id
+          redirect_to trainer_path(trainer)
       else
         flash[:message] = "Invalid Email and/or Password, please try again."
         redirect_to "/login"
+       end
       end
-
     end
 
     def destroy
