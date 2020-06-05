@@ -3,7 +3,6 @@ class ClientsController < ApplicationController
     before_action :set_client, only: [:show, :edit, :update, :destroy]
 
     def index
-        #byebug
         if current_user.id == params[:trainer_id].to_i
             @clients = current_user.clients.ordered_by_name
             render :index 
@@ -28,16 +27,14 @@ class ClientsController < ApplicationController
     end
 
     def show
-       # @client = Client.find_by(id: params[:id])
-       #binding.pry
+ 
     end
 
     def edit
-       # @client = Client.find_by(id: params[:id])
+       
     end
 
     def update
-       # byebug
         if @client.update(client_params)
             flash[:message] = "Your client's information has been updated successfully!"
             redirect_to client_path(@client)
