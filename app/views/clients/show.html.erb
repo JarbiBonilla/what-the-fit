@@ -12,11 +12,11 @@
 <br>
 <br>
 
-<h4> <%= @client.name %>'s appointments' </h4>
+<h4> <%= @client.name %>'s appointments </h4>
 
-   <% @client.appointments.each do |app| %>
-      <%= link_to app.appointment_time.strftime("%A %B %e, %Y %l:%M %p"), appointment_path(app) unless app.appointment_time == nil %>
-   <% end %>
+  <ul> <% @client.appointments.each do |app| %>
+    <li> <%= link_to app.appointment_time.strftime("%A %B %e, %Y %l:%M %p"), appointment_path(app) unless app.appointment_time == nil %> </li>
+   <% end %> </ul>
 <br>
 
 <%= button_to "Add an Appointment", new_client_appointment_path(@client), method: :get %>

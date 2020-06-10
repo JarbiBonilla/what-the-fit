@@ -21,7 +21,7 @@ class AppointmentsController < ApplicationController
             flash[:message] = "Appointment has been successfully created!"
             redirect_to appointment_path(@appointment)
         else
-            @client = @appointment.client
+            #@client = @appointment.client
             render :new
         end 
     end
