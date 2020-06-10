@@ -6,6 +6,7 @@ class Client < ApplicationRecord
     accepts_nested_attributes_for :appointments 
 
     scope :ordered_by_name, -> { order(name: :asc) }
+    scope :client_name, -> (name) {where("name like ?", "%#{name}%")}
 
     validates :name, presence: true
     validates :age, numericality: true

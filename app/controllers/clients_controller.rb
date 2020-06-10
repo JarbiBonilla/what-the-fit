@@ -2,6 +2,11 @@ class ClientsController < ApplicationController
     
     before_action :set_client, only: [:show, :edit, :update, :destroy]
 
+    def search
+        @clients = Client.client_name(params[:name]) if params[:name].present?
+        render :index
+    end
+
     def index
         if current_user.id == params[:trainer_id].to_i
             @clients = current_user.clients.ordered_by_name

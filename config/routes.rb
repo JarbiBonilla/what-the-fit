@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   #logout route
   delete '/logout', to: 'sessions#destroy'
 
+  get '/search', to: 'clients#search'
+
   resources :clients, except: [:index]
   resources :appointments, except: [:new, :index]
 
